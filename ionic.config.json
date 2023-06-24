@@ -1,0 +1,7 @@
+{
+  "name": "one-ui",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
