@@ -1,0 +1,23 @@
+<ion-header class="ion-no-border" header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-button (click)="cancel()">
+        <ion-icon name="chevron-back-outline"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-input placeholder="Procurar" #focusInput/>
+    <ion-buttons slot="end">
+      <ion-button>
+        <ion-icon name="mic"></ion-icon>
+      </ion-button>
+      <ion-button>
+        <ion-icon name="ellipsis-vertical"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+  <div class="empty ion-padding">
+    Sem procuras recentes
+  </div>
+</ion-content>

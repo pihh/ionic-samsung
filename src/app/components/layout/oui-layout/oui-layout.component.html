@@ -1,0 +1,11 @@
+<main class="oui-layout-container"  (scroll)="handleScroll($any($event))">
+  <app-oui-layout-viewing [title]="title" #oneUiViewing [ouiViewPct]="ouiViewPct">
+    <ng-content select="[viewing]"></ng-content>
+  </app-oui-layout-viewing>
+  <app-oui-layout-header [title]="title" [ouiViewNavPct]="ouiViewNavPct" (onButtonClickEvent)="onHeaderButtonClick($event)">
+
+  </app-oui-layout-header>
+  <app-oui-layout-interaction>
+    <ng-content></ng-content>
+  </app-oui-layout-interaction>
+</main>

@@ -1,0 +1,36 @@
+.oui-card {
+  border-radius: 20px;
+  margin: 1em 0;
+  box-shadow: none;
+  --background: white;
+  --ion-item-background: white;
+
+  ion-card-content {
+    ion-list,
+    .list-ios {
+      --background: white;
+      --ion-item-background: white;
+      ion-item {
+        background: white;
+        --background: white;
+        --ion-item-background: white;
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+          padding: 0;
+        }
+      }
+      ion-item:last-of-type{
+        --inner-border-width: 0px 0px 0px 0px;
+      }
+    }
+  }
+
+}
+// ion-card-content > ion-list > ion-item:last-of-type{
+//   --inner-border-width: 0px 0px 0px 0px;
+// }
+

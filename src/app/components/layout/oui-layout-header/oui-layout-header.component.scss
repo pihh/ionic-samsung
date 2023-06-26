@@ -1,0 +1,24 @@
+
+
+ion-header {
+  order: 0;
+  position: sticky;
+  top: 0;
+  // ion-title{
+  //   text-align: left;
+  //   padding-inline-start: 3em;
+  // }
+  ion-title{
+    width: -webkit-fill-available;
+    text-align: left;
+    padding: 0 0 0 2.5em;
+  }
+  ion-icon{
+    color: black
+  }
+}
+
+
+.oui-viewing-navbar-title {
+  opacity: 0;
+}

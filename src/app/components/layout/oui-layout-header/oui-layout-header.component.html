@@ -1,0 +1,17 @@
+<ion-header class="ion-no-border" header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-button *ngFor="let button of this.options.buttons.start" (click)="onButtonClick($event, button.name)">
+        <ion-icon [name]="button.icon"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-title [ngStyle]="{'opacity': ouiViewNavPct}">
+      {{title}}
+    </ion-title>
+    <ion-buttons slot="end">
+      <ion-button *ngFor="let button of this.options.buttons.end" (click)="onButtonClick($event, button.name)">
+        <ion-icon [name]="button.icon"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
