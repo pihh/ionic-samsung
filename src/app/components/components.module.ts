@@ -9,6 +9,10 @@ import { OuiCardComponent } from './card/oui-card/oui-card.component';
 import { OuiDialogBaseComponent } from './dialogs/oui-dialog-base/oui-dialog-base.component';
 import { OuiModalBaseComponent } from './modal/oui-modal-base/oui-modal-base.component';
 import { OuiPopoverBaseComponent } from './popover/oui-popover-base/oui-popover-base.component';
+import { FormInputComponent } from './form/form-input/form-input.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { FormComponent } from './form/form/form.component';
+
 
 @NgModule({
   declarations: [
@@ -19,9 +23,12 @@ import { OuiPopoverBaseComponent } from './popover/oui-popover-base/oui-popover-
     OuiCardComponent,
     OuiDialogBaseComponent,
     OuiModalBaseComponent,
-    OuiPopoverBaseComponent
+    OuiPopoverBaseComponent,
+    FormInputComponent,
+
+    FormComponent
   ],
-  imports: [CommonModule, IonicModule],
+  imports: [CommonModule, IonicModule,FormsModule,ReactiveFormsModule],
   exports: [
     OuiLayoutComponent,
     OuiLayoutViewingComponent,
@@ -30,7 +37,10 @@ import { OuiPopoverBaseComponent } from './popover/oui-popover-base/oui-popover-
     OuiCardComponent,
     OuiDialogBaseComponent,
     OuiModalBaseComponent,
-    OuiPopoverBaseComponent
+    OuiPopoverBaseComponent,
+    FormInputComponent,
+
+    FormComponent
   ],
 })
 export class ComponentsModule {}

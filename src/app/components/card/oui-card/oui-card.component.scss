@@ -22,6 +22,11 @@
         h6 {
           padding: 0;
         }
+        ion-label{
+          p{
+            font-size: 13px;
+          }
+        }
       }
       ion-item:last-of-type{
         --inner-border-width: 0px 0px 0px 0px;
@@ -30,7 +35,12 @@
   }
 
 }
+
+
 // ion-card-content > ion-list > ion-item:last-of-type{
 //   --inner-border-width: 0px 0px 0px 0px;
 // }
 
+.sc-ion-label-md-s p {
+  font-size: 13px;
+}

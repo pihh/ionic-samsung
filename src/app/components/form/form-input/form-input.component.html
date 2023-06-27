@@ -1,0 +1,129 @@
+<ng-template #item [formGroup]="form">
+  <ng-container *ngIf="field.controlType === 'textbox'">
+    <ion-textarea
+      [required]="field.required"
+      [formControlName]="field.key"
+      [id]="uuid"
+      [label]="field.label"
+      [placeholder]="field.placeholder"
+      label-placement="stacked"
+    ></ion-textarea>
+  </ng-container>
+  <ng-container *ngIf="field.controlType === 'textarea'">
+    <ion-textarea
+      [required]="field.required"
+      [formControlName]="field.key"
+      [id]="uuid"
+      [label]="field.label"
+      [placeholder]="field.placeholder"
+      label-placement="stacked"
+    >
+    </ion-textarea>
+  </ng-container>
+  <ng-container
+    *ngIf="field.controlType === 'text' || field.controlType === 'number' || field.controlType === 'tel'"
+  >
+    <ion-input
+      [required]="field.required"
+      [formControlName]="field.key"
+      [id]="uuid"
+      [type]="field.controlType"
+      [label]="field.label"
+      [placeholder]="field.placeholder"
+      label-placement="stacked"
+    ></ion-input>
+  </ng-container>
+  <ng-container *ngIf="field.controlType === 'select'">
+    <ion-select
+      [required]="field.required"
+      [label]="field.label"
+      [formControlName]="field.key"
+      [name]="field.key"
+      label-placement="stacked"
+    >
+      <ion-select-option
+        *ngFor="let option of field.options"
+        [value]="option.value"
+        >{{ option.key }}</ion-select-option
+      >
+    </ion-select>
+  </ng-container>
+  <ng-container *ngIf="field.controlType === 'radio'">
+    <label>{{ field.label }}</label>
+    <label
+      class="oui-label oui-container-radio"
+      *ngFor="let option of field.options"
+      [attr.for]="field.key + '__' + option.key.replace(' ', '_')"
+    >
+      <input
+        class="oui-input-radio"
+        [formControlName]="field.key"
+        [name]="field.key"
+        [id]="field.key + '__' + option.key.replace(' ', '_')"
+        [value]="option.value"
+        type="radio"
+      />
+      <span class="oui-input-text">{{ option.key }}</span>
+      <span class="oui-input-radio-checkmark"></span>
+    </label>
+  </ng-container>
+
+  <ng-container *ngIf="field.controlType === 'switch'">
+    <label class="oui-label oui-container-toggle" [attr.for]="uuid">
+      <input
+        type="checkbox"
+        class="toggle"
+        [formControlName]="field.key"
+        [name]="field.key"
+        [id]="uuid"
+        [checked]="this.form.controls[field.key].value"
+      />
+      <span class="toggle-slider"></span>
+      <span>{{ field.label }}</span>
+    </label>
+  </ng-container>
+
+  <ng-container *ngIf="field.controlType === 'range'">
+    <label class="oui-label oui-container-slider" [attr.for]="uuid">
+      <span>{{ field.label }} ({{ this.form.controls[field.key].value }})</span>
+      <input
+        id="slider-oui"
+        type="range"
+        class="oui-input-slider"
+        [formControlName]="field.key"
+        [name]="field.key"
+        [id]="uuid"
+        [min]="field.min"
+        [max]="field.max"
+      />
+    </label>
+  </ng-container>
+
+  <ng-container *ngIf="field.controlType === 'checkbox'">
+    <label class="oui-label oui-container-checkbox" [attr.for]="uuid">
+      <span class="oui-input-text">{{ field.label }}</span>
+      <input
+        [id]="uuid"
+        type="checkbox"
+        class="oui-input-checkbox"
+        [formControlName]="field.key"
+        [name]="field.key"
+        [checked]="this.form.controls[field.key].value"
+      />
+      <span class="oui-input-checkbox-checkmark"></span>
+    </label>
+  </ng-container>
+  <section
+    class="errorMessage"
+    *ngIf="this.form.submitIntention && !this.form.controls[field.key].valid"
+  >
+    {{ field.label }} is required
+  </section>
+</ng-template>
+
+<div *ngIf="wrapper !== 'ion-item'">
+  <ng-template [ngTemplateOutlet]="item"></ng-template>
+</div>
+<ion-item *ngIf="wrapper == 'ion-item'">
+  <ng-template [ngTemplateOutlet]="item"></ng-template>
+</ion-item>

@@ -1,8 +1,8 @@
 import { Component, Renderer2, ViewChild } from '@angular/core';
 import { MenuController, PopoverController } from '@ionic/angular';
-import { OuiDialogService } from '../services/oui-dialog.service';
-import { OuiModalService } from '../services/oui-modal.service';
-import { OuiPopoverBaseComponent } from '../components/popover/oui-popover-base/oui-popover-base.component';
+import { OuiDialogService } from '../../services/oui-dialog.service';
+import { OuiModalService } from '../../services/oui-modal.service';
+import { OuiPopoverBaseComponent } from '../../components/popover/oui-popover-base/oui-popover-base.component';
 
 @Component({
   selector: 'app-home',
@@ -52,8 +52,21 @@ export class HomePage {
   }
 
   async onHeaderButtonClickMenu(e:any){
-    console.log(this.menuController)
+
     this.menuController.open()
+  }
+
+  ionViewDidEnter() {
+    //this.logout()
+  }
+
+  private SESSION_STORAGE_KEY = 'oui-session-data';
+  private logout() {
+    localStorage.removeItem(this.SESSION_STORAGE_KEY);
+  }
+
+  login(){
+    localStorage.setItem(this.SESSION_STORAGE_KEY, JSON.stringify({"session": "one-ui-session"}));
   }
 }
 

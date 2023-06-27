@@ -31,6 +31,8 @@
 * {
   font-family: "Samsung Sharp Sans" !important;
 }
+
+
 :root {
   --primary: #0865c3;
   --orange: #c65306;
@@ -49,9 +51,16 @@
   }
 }
 
+
+.debug *{
+  border:1px solid red !important;
+}
+
 .oui-dialog-modal-wrapper {
   --background: transparent;
   --backdrop-opacity: 0.8;
+  --min-width: 100vw;
+  --min-height: 100vh;
 }
 
 .oui-card {
@@ -131,4 +140,32 @@ ion-label{
   p{
     font-size: 13px;
   }
+}
+
+
+.sc-ion-label-md-s>p,.item.sc-ion-label-md-h, .item .sc-ion-label-md-h {
+  font-size: 13px;
+}
+
+
+.oui-input-radio-checkmark:after {
+  width: 14px;
+  height: 14px;
+
+}
+
+.rounded{
+  border-radius: 1em;
+}
+
+
+ion-menu::part(container) {
+  margin-top: 1.5vh;
+  border-radius: 0 1em 1em 0;
+  height: 97vh;
+}
+
+.padding-y{
+  padding-top: 1em;
+  padding-bottom: 1em;
 }

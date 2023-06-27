@@ -1,0 +1,22 @@
+<form [formGroup]="form" (ngSubmit)='onNgSubmit($event)' novalidate>
+
+  <section *ngFor="let field of formFields" class="form-row">
+
+    <app-form-input [field]="field" [form]="form" [wrapper]="field.wrapper"></app-form-input>
+  </section>
+  <section>
+    <ion-button *ngFor="let button of formButtons"
+    [type]="button.type"
+    [size]="button.size"
+    [color]="button.color"
+    [shape]="button.shape"
+    [expand]="button.expand"
+    [disabled]="button.disabled"
+
+    >
+      {{button.label}}
+    </ion-button>
+
+  </section>
+</form>
+

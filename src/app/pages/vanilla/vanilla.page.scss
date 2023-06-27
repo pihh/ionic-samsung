@@ -1,0 +1,85 @@
+:host{
+  background-color: aliceblue;
+}
+.no-snap{
+  scroll-snap-type: none;
+}
+.one-ui-page--wrapper {
+  height: 100vh;
+  overflow: auto;
+  scroll-snap-type: y proximity;
+  .one-ui-viewing {
+    height: 40vh;
+    display: flex;
+    flex-direction: column;
+
+    position: -webkit-sticky;
+    position: sticky;
+    top: calc(-40vh + 44px);
+    scroll-snap-stop: always;
+
+    .one-ui-viewing--container {
+      flex: 1;
+      scroll-snap-stop: always;
+      margin-bottom: 1px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-top: 2em;
+      h1{
+        font-weight: 600;
+      }
+    }
+    .one-ui-viewing--header {
+      height: 44px;
+      width: 100%;
+
+      scroll-snap-type: y proximity;
+      scroll-snap-stop: always;
+      scroll-snap-align: end;
+
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+
+      .one-ui-viewing--header--slot.one-ui-viewing--header--slot-center {
+        text-align: left;
+        display: flex;
+        flex: 1;
+        align-items: center;
+        height: 100%;
+        h4 {
+          margin-top: 3px;
+          font-weight: bold;
+        }
+      }
+      .one-ui-viewing--header--slot {
+        ion-button {
+          --background: transparent;
+          --box-shadow: none;
+          --padding-end: 0.55em;
+          --padding-start: 0.55em;
+          color: black;
+        }
+      }
+    }
+  }
+  .one-ui--interaction {
+    height: 100%;
+    max-height: calc(100vh - 44px);
+    position: -webkit-sticky;
+    position: sticky;
+    top: calc(-40vh + 44px);
+    overflow: auto;
+    scroll-snap-align: start;
+    scroll-snap-stop: always;
+    main {
+
+      min-height: 200vh;
+    }
+  }
+}
+
+.overflow-hidden {
+  overflow: hidden !important;
+}
