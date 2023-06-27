@@ -15,6 +15,9 @@ import {
   FormRangeInput,
   FormButton,
 } from 'src/app/components/form/configurations/configuration';
+import { FormTelInput } from 'src/app/components/form/configurations/form-tel.configuration copy';
+import { FormEmailInput } from 'src/app/components/form/configurations/form-email.configuration';
+import { FormPasswordInput } from 'src/app/components/form/configurations/form-password.configuration';
 @Component({
   selector: 'app-vanilla',
   templateUrl: './vanilla.page.html',
@@ -138,21 +141,18 @@ export class VanillaPage implements OnInit {
   testFormFields = [
     new FormTextInput({
       key: 'text',
-      type: 'text',
       label: 'Text',
       required: true,
       value: 'text',
-      wrapper: 'ion-item'
+
     }),
-    new FormTextInput({
+    new FormTelInput({
       key: 'tel',
-      type: 'tel',
       label: 'Tel',
       required: true,
     }),
     new FormRadio({
       key: 'radio',
-      type: 'radio',
       label: 'Radio',
       options: [
         { value: 'female', key: 'Female' },
@@ -164,7 +164,6 @@ export class VanillaPage implements OnInit {
     }),
     new FormSelectInput({
       key: 'select',
-      type: 'select',
       label: 'Select',
       options: [
         { value: 'female', key: 'Female' },
@@ -176,38 +175,43 @@ export class VanillaPage implements OnInit {
     }),
     new FormTextareaInput({
       key: 'textarea',
-      type: 'textarea',
       label: 'Textarea',
       required: true,
+      // wrapper: 'ion-item'
     }),
     new FormNumberInput({
       key: 'number',
-      type: 'number',
       label: 'Number',
       required: true,
       min:-1,
-      max:10
+      max:10,
+      // wrapper: 'ion-item'
     }),
     new FormSwitchInput({
       key: 'switch',
-      type: 'switch',
       label: 'Switch',
       required: true,
     }),
     new FormCheckboxInput({
       key: 'checkbox',
-      type: 'checkbox',
       label: 'Checkbox',
       required: true,
       value: true,
     }),
     new FormRangeInput({
       key: 'range',
-      type: 'range',
       label: 'Range',
       min: 0,
       max:10
       //required: true,
+    }),
+    new FormEmailInput({
+      key: 'email',
+      label: 'Email',
+    }),
+    new FormPasswordInput({
+      key: 'pasPassword',
+      label: 'Password',
     }),
   ];
   testFormButtons = [

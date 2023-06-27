@@ -5,14 +5,14 @@
     </ion-toolbar>
   </ion-header>
   <ion-content class="ion-padding"> </ion-content>
-  <ion-footer class="ion-no-border padding-y">
-    <div class="ion-text-center">
+  <ion-footer class="ion-no-border padding-y ion-text-center">
+
       <ion-menu-toggle>
         <ion-button size="small" shape="round"
           >Click to close the menu</ion-button
         >
       </ion-menu-toggle>
-    </div>
+
   </ion-footer>
 </ion-menu>
 <main
@@ -23,11 +23,15 @@
 >
   <section class="one-ui-viewing" #oneUiViewing>
     <main class="one-ui-viewing--container" #viewingContainer>
-      <h1
-        [ngStyle]="{'opacity': ouiViewPct, 'transform':'translateY('+ (20 - (ouiViewPct*40)) + 'px)'}"
-      >
+      <div class="one-ui-viewing--container--body" [ngStyle]="{'opacity': ouiViewPct, 'transform':'translateY('+ (20 - (ouiViewPct*40)) + 'px)'}">
+
+        <h1
+
+        >
         Header
       </h1>
+      <p>Header Subtitle</p>
+    </div>
     </main>
     <nav class="one-ui-viewing--header">
       <section
@@ -65,6 +69,10 @@
     [ngClass]="viewingContainerVisible? 'overflow-hidden': ''"
   >
     <main>
+      <div class="card-title-outside ion-padding">
+        <ion-label>Cat</ion-label>
+      </div>
+
       <app-oui-card>
 
           <img alt="Kitten sleeping" src="assets/kitten.jpg"
@@ -73,6 +81,11 @@
           <p class="oui-image-cover-caption">Hey this is an example</p>
 
       </app-oui-card>
+
+      <div class="card-title-outside ion-padding">
+        <ion-label>List</ion-label>
+      </div>
+
       <app-oui-card>
         <ion-list>
           <ion-list-header>
@@ -103,6 +116,11 @@
           </ion-item>
         </ion-list>
       </app-oui-card>
+
+      <div class="card-title-outside ion-padding">
+        <ion-label>List with avatar</ion-label>
+      </div>
+
       <app-oui-card>
         <ion-list>
           <ion-list-header>
@@ -131,6 +149,10 @@
           </ion-item>
         </ion-list>
       </app-oui-card>
+
+      <div class="card-title-outside ion-padding">
+        <ion-label>Base inputs</ion-label>
+      </div>
 
       <app-oui-card>
         <section>
@@ -168,6 +190,10 @@
           </label>
         </section>
       </app-oui-card>
+
+      <div class="card-title-outside ion-padding">
+        <ion-label>Form util inputs</ion-label>
+      </div>
 
       <app-oui-card>
 

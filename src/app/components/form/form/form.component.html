@@ -4,15 +4,14 @@
 
     <app-form-input [field]="field" [form]="form" [wrapper]="field.wrapper"></app-form-input>
   </section>
-  <section>
+  <section class="ion-text-center">
     <ion-button *ngFor="let button of formButtons"
-    [type]="button.type"
-    [size]="button.size"
-    [color]="button.color"
-    [shape]="button.shape"
-    [expand]="button.expand"
-    [disabled]="button.disabled"
-
+      [type]="button.type"
+      [size]="button.size"
+      [color]="button.color"
+      [shape]="button.shape"
+      [expand]="button.expand"
+      [disabled]="button.disabled"
     >
       {{button.label}}
     </ion-button>

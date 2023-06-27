@@ -58,5 +58,9 @@ export class FormInputBase<T> {
     if(this.max !== undefined ){
       this.validators?.push(Validators.max(this.max))
     }
+    if(this.controlType == "password" ){
+      this.validators?.push(Validators.min(6))
+      this.validators?.push(Validators.max(32))
+    }
   }
 }

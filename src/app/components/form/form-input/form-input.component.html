@@ -21,7 +21,7 @@
     </ion-textarea>
   </ng-container>
   <ng-container
-    *ngIf="field.controlType === 'text' || field.controlType === 'number' || field.controlType === 'tel'"
+    *ngIf="field.controlType === 'text' || field.controlType === 'number' || field.controlType === 'tel' || field.controlType === 'email' || field.controlType === 'password'"
   >
     <ion-input
       [required]="field.required"
@@ -40,6 +40,7 @@
       [formControlName]="field.key"
       [name]="field.key"
       label-placement="stacked"
+      interface="action-sheet"
     >
       <ion-select-option
         *ngFor="let option of field.options"
@@ -49,7 +50,7 @@
     </ion-select>
   </ng-container>
   <ng-container *ngIf="field.controlType === 'radio'">
-    <label>{{ field.label }}</label>
+    <label class="oui-input-container-label">{{ field.label }}</label>
     <label
       class="oui-label oui-container-radio"
       *ngFor="let option of field.options"
